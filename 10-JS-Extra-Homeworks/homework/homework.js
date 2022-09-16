@@ -25,7 +25,12 @@ function numberOfCharacters(string) {
   //Escribe tu código aquí
   var obj = {};
   for(var i in string){
-    obj[string[i]] = (obj[string[i]] || 0) + 1;
+    if(obj.hasOwnProperty(string[i])){
+      obj[string[i]]++;
+    }
+    else{
+      obj[string[i]] = 1;
+    }
   }
   return obj;
 }
